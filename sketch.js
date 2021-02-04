@@ -14,14 +14,20 @@ function setup() {
 function draw() {
 	background(75, 222, 217);
 
-	// draw Triangle (2)
+	// draw Triangle (3)
 	drawTri();
 
-	// draw Rectangle
+	// draw Rectangle (2)
 	drawRec();
 
-	// draw Circle
+	// draw Circle (~2)
 	drawCirc();
+
+	// draw Elipse
+	drawElips();
+
+	// cursor
+	cursorX();
 }
 
 function drawTri() {
@@ -35,18 +41,32 @@ function drawTri() {
 	// inverted
 	fill(67, 28, 166);
 	triangle(130, 175, 158, 230, 186, 175);
+
+
+	// slanted 
+	fill(255, 193, 48);
+	triangle(200, 175, 158, 250, 300, 175);
 }
 
 function drawRec() {
 	/* x, y, w, l */
-	fill(116, 27, 168);
-	stroke(90, 28, 166);
-	strokeWeight(4);
+	
+	if (!mouseIsPressed) {
+		fill(116, 27, 168);
+		stroke(90, 28, 166);
+		strokeWeight(4);
+	} else {
+		fill(61, 42, 235);
+		noStroke();
+	}
 	rect(rectX, rectY, 200, 100);
 
-
-
 	rect(rectY, rectX, 1000, 100);
+
+	rect(300, 20, 20, 55, 20, 15, 10, 5);
+
+	fill(199, 230, 23);
+	rect(350, 120, 20, 500, 20, 15, 10, 5);
 
 }
 
@@ -73,4 +93,19 @@ function drawCirc() {
 
 	circle(width/2, height/2, 10);
 
+}
+
+function drawElips() {
+	/* ellipse(x, y, w, [h]) */
+
+	fill(181, 46, 201);
+	ellipse(width/2 + 200, height/2, 255, 355);
+
+	fill(255, 193, 48);
+	ellipse(width/2 + 300, height/2 + 200, 250, 360);
+}
+
+function cursorX() {
+	fill(61, 42, 235);
+	ellipse(pmouseX, pmouseY, 15, 15);
 }
