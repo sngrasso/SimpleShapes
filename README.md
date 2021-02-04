@@ -1,10 +1,10 @@
-## Hello World for P5.js
+## Simple Shapes for P5.js
 #### by Stephanie Grasso
-January 28, 2021
+February 3, 2021
 
 
 ### Overview
-simple Hello World text display
+display of simple 10+ shapes using P5.js
 
 
 ### Technical Details
